@@ -1,0 +1,53 @@
+{% extends 'employee_app/index.html' %}
+{% block head %}
+<style>
+h4{
+color: #ffffff;
+}
+#id_name {
+    width: 450px;
+}
+#id_number_set-0-num {
+    width: 450px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<section id="hero">
+    <div class="hero-container">
+        <form method="post" action="" >
+            {% csrf_token %}<center>
+            <h4>Name</h4>
+            {{ form1.name }}
+
+            {{ form2.management_form }}
+            {% for formm2 in form2 %}
+            <h4>Address</h4>
+            <table>
+                <tr class="addressbutton">
+                    <td>{{ formm2.des }}</td>
+                </tr>
+            </table>
+
+            {% endfor %}
+
+            {{ form3.management_form }}
+            {% for formm3 in form3 %}
+
+                <h4>Number</h4>
+            <table>
+                <tr class="numbutton">
+                    <td>{{ formm3.num }}</td>
+                </tr>
+            </table>
+
+            {% endfor %}
+
+            <input type="submit" value="Submit" class="btn-get-started">
+            </center>
+        </form>
+    </div>
+</section>
+{% endblock %}
+

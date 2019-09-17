@@ -1,0 +1,21 @@
+{% extends 'employee_app/index.html' %}
+{% block content %}
+<section id="hero">
+    <div class="hero-container">
+<form method="post" action="" class="form-inline ">
+{% csrf_token %}
+
+    {{ form2.management_form }}
+    {% for formm2 in form2 %}
+    <table>
+                <tr class="addbutton">
+                    <td>{{ formm2.des }}</td>
+                </tr>
+    </table>
+    {% endfor %}
+
+    <button type="submit" value="Submit">Submit</button>
+</form>
+    </div>
+</section>
+{% endblock %}

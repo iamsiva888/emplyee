@@ -1,0 +1,21 @@
+{% extends 'employee_app/index.html' %}
+{% block head %}
+<style>
+#header{
+background:#000;
+}
+</style>
+{% endblock %}
+{% block content %}
+<section id="portfolio">
+                    <div class="container wow fadeInUp">
+                        <div class="section-header">
+                            <h3 class="section-title">Delete {{ emp.name }}</h3>
+                            <p class="section-description">Are you sure ? <</p>
+
+
+                        </div>
+
+                    </div>
+                </section>
+{% endblock %}

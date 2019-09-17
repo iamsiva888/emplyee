@@ -1,0 +1,24 @@
+{% extends 'employee_app/index.html' %}
+{% block head %}
+{% endblock %}
+{% block content %}
+            <section id="hero">
+                <div class="hero-container">
+                    <h1>hello {{ emp.name }}</h1><br>
+
+                    {% for add in addr %}
+                    <h2><b>Address</b> :- {{ add.des }} </h2>
+
+                    {% endfor %}
+
+                    {% for num in nums %}
+                    <h2><b>Number</b> :- {{ num.num }} </h2>
+                    {% endfor %}
+
+                    <a href="{% url 'employee_app:employee_edit' emp.pk %}" class="btn-get-started">Edit</a>
+                    <a href="{% url 'employee_app:employee_delete_confirm' emp.pk %}" class="btn-get-started">Delete</a>
+                </div>
+            </section>
+        </div>
+
+{% endblock %}

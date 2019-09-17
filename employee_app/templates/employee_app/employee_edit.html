@@ -1,0 +1,52 @@
+{% extends 'employee_app/index.html' %}
+{% block head %}
+<style>
+h4{
+color: #ffffff;
+}
+#id_name {
+    width: 450px;
+}
+#id_number_set-0-num {
+    width: 450px;
+}
+
+</style>
+{% endblock %}
+{% block content %}
+<section id="hero">
+    <div class="hero-container">
+        <form method="post" action="" class="form-horizontal">
+            {% csrf_token %}
+
+                <h4>Name</h4>
+                {{ form1.name }}
+                {{ form2.management_form }}
+                <h4>Address</h4>
+                {% for des in form2 %}
+                <table>
+                    <tr class="addressbutton">
+                        <td>{{ des.id }}</td>
+                        <td>{{ des.des }}</td>
+                    </tr>
+                </table>
+                {% endfor %}
+
+                {{ form3.management_form }}
+                <h4>Number</h4>
+                {% for num in form3 %}
+                <table>
+                    <tr class="numbutton">
+                        <td>{{ num.id }}</td>
+                        <td>{{ num.num }}</td>
+                    </tr>
+                </table>
+                {% endfor %}
+                <button type="submit" value="Submit" class="btn-get-started">Submit</button>
+
+        </form>
+    </div>
+</section>
+{% endblock %}
+
+

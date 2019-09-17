@@ -1,0 +1,19 @@
+{% extends 'employee_app/index.html' %}
+{% block head %}
+{% endblock %}
+{% block content %}
+<section id="hero">
+    <div class="hero-container">
+        <h1 class="section-title">Employees</h1>
+        <table>
+            {% for e in emp %}
+            <tr>
+                <td><a href="{% url 'employee_app:employee_view' e.pk %}"><h3><i class="fa fa-user"
+                                                                                 aria-hidden="true"></i>
+                    {{ e.name }}</h3></a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+{% endblock %}

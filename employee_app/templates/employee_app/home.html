@@ -1,0 +1,9 @@
+{% extends 'employee_app/index.html' %}
+{% block content %}
+<section id="hero">
+    <div class="hero-container">
+        <h1>Welcome</h1>
+        <a href="{% url 'employee_app:employee_register' %}" class="btn-get-started">Register</a>
+    </div>
+</section>
+{% endblock %}
